@@ -1,103 +1,159 @@
-# 🏜️ Arizona Social Vulnerability Dashboard (Streamlit on Snowflake)
+# 🏜️ Navigating Care Deserts: Arizona Social Vulnerability & Healthcare Access Dashboard
+---
 
-An interactive **Streamlit application deployed inside Snowflake** that explores how **social vulnerability, heat risk, and healthcare access** intersect across Arizona counties.  
-Built as part of **Break Through Tech AI Studio** by **Team Snowflake 1C**.
+## 👥 Team Members
+
+| Name | GitHub Handle | Contribution |
+|----|----|----|
+| Mahamadou Nimaga | @Mahamadou4 | Streamlit app development, Snowflake integration, dashboard architecture, AI assistant |
+| Team Snowflake 1C | @sgubba1 | Data engineering, feature selection, exploratory analysis, modeling |
+| Team Snowflake 1C | @zyanczy| Data engineering, feature selection, exploratory analysis, modeling |
+| Team Snowflake 1C | @fizabajwa25 | Data engineering, feature selection, exploratory analysis, modeling |
+| Team Snowflake 1C | @nitsujiang | Data engineering, feature selection, exploratory analysis, modeling |
+| Team Snowflake 1C | @naima-01 | Data engineering, feature selection, exploratory analysis, modeling |
+
+
+## 🎯 Project Highlights
+
+- Built an interactive **Streamlit-on-Snowflake dashboard** analyzing healthcare access across Arizona counties  
+- Combined **SVI, heat risk, and hospital capacity** into a single analytical view  
+- Identified counties at highest risk of being **medical deserts**  
+- Delivered **interpretable visual analysis** for policy and public health use  
+- Integrated a **Snowflake Cortex AI assistant** for natural-language insights
+- Built an interactive Streamlit dashboard deployed natively in Snowflake
+- Combined SVI, heat risk, and hospital capacity into a single analytical view
+- Identified counties at highest risk of being medical deserts
+-	Delivered interpretable visual analysis for public health and policy use
+-	Integrated a Snowflake Cortex AI assistant for natural-language insights
 
 ---
 
-## 🚀 Overview
 
-This dashboard connects **directly to Snowflake tables using Snowpark** and provides:
 
-- Data understanding of raw and processed SVI + hospital datasets  
-- County-level vulnerability and population analysis  
-- Exploratory visual analysis of healthcare capacity, heat, and social barriers  
-- Model performance interpretation  
-- An AI assistant powered by **Snowflake Cortex** (no external API key required)
-
+## 🧰 Tech Stack
+- Snowflake (Snowpark, Cortex)
+- Streamlit (Snowflake-native)
+- Python (pandas, Altair)
+- GitHub (version control and deployment)
 ---
 
-## 🧱 Tech Stack
+## 👩🏽‍💻 Setup and Installation
 
-- Snowflake Streamlit  
-- Snowpark for Python  
-- Streamlit  
-- Pandas  
-- Altair  
-- Snowflake Cortex (LLM inference)
+This project runs **natively inside Snowflake Streamlit**.
 
----
+**Environment**
 
-## Project Structure
-├── app.py                     # Main Streamlit application
-├── ziyan_eda_arizona.py        # Modular exploratory EDA logic
-├── environment.yml             # Snowflake Python environment
-└── README.md
----
+Name: app_environment
 
-## Data Sources (Snowflake Tables)
+Channels:
+	•	snowflake
 
-The app reads directly from Snowflake:
+## Dependencies:
+- python 3.10
+- snowflake-snowpark-python
+- streamlit
 
-- `SVI.PUBLIC.ARIZONA_CLEAN`
-- `SVI.PUBLIC.ARIZONA_2022_MAXTEMP`
-- `SVI.PUBLIC.ARIZONA_LICENSED_HOSPITAL`
-- `SVI.PUBLIC.SVI_HOSPITAL_MERGED`
-- `SVI.PUBLIC.SVICLEANED`
+### How to Run
+- Connect this GitHub repository to Snowflake using Git integration
+- Open app.py in Snowflake Streamlit
+- Run the app (authentication handled automatically)
 
-No local CSVs are used.
+### 🧪 Data Sources
+These datasets include county-level social vulnerability indicators, heat exposure metrics, population data, and licensed hospital capacity.
+Snowflake tables used in this project:
+- SVI.PUBLIC.ARIZONA_CLEAN
+- SVI.PUBLIC.ARIZONA_2022_MAXTEMP
+- SVI.PUBLIC.ARIZONA_LICENSED_HOSPITAL
+- SVI.PUBLIC.SVI_HOSPITAL_MERGED
+- SVI.PUBLIC.SVICLEANED
 
----
-
-## App Pages
-
-### Home
-- High-level introduction  
-- Live preview of Arizona SVI data from Snowflake  
-
-### Data Understanding
-- Raw SVI and hospital data previews  
-- Final engineered dataset (`SVI_HOSPITAL_MERGED`)  
-- Feature reference guide  
-- Data type composition visualization  
-
-### County Analysis
-- Population vs vulnerability metrics  
-- Interactive county filtering and comparisons  
-
-### Exploratory Visual Analysis
-- Deep dive into:
-  - Hospital capacity  
-  - Social barriers  
-  - Heat risk  
-  - Population and daytime presence  
-- County ranking charts  
-- Outlier detection (IQR-based)  
-- Plain-English interpretations for each variable  
-
-### Modeling & Evaluation
-- Summary of model performance  
-- Interpretation of perfect scores  
-- Discussion of overfitting and data leakage risks  
-- Recommended next steps  
-
-### AI Assistant
-- Ask natural-language questions about the data  
-- Uses **Snowflake Cortex (`deepseek-r1`)**  
-- No OpenAI key required  
-- Produces concise, policy-friendly insights  
+These datasets include county-level social vulnerability indicators, heat exposure metrics, population data, and licensed hospital capacity.
 
 ---
+## 🏗️Project Overview
 
-## Environment Configuration
+Connection to Break Through Tech AI
 
-This app runs **inside Snowflake Streamlit**, using the following environment:
+This project was developed as part of the Break Through Tech AI Studio, where fellows work on real-world, industry-aligned data science challenges using enterprise platforms and responsible AI practices.
 
-```yaml
-name: app_environment
-channels:
-  - snowflake
-dependencies:
-  - python=3.10.*
-  - snowflake-snowpark-python
-  - streamlit
+**Host Context & Objectives**
+
+The objective of this project is to identify and explain healthcare access gaps (“medical deserts”) in Arizona by analyzing how social vulnerability, heat exposure, population dynamics, and hospital capacity interact at the county level. social vulnerability, heat exposure, population dynamics, and hospital capacity intersect at the county level.
+
+**Scope of Work**
+- Data exploration and feature engineering using Snowflake
+- County-level comparative analysis and interactive visualization
+- Interpretability-focused model evaluation
+- AI-assisted insight generation for non-technical stakeholders
+
+**Real-World Significance**
+
+Extreme heat and social vulnerability amplify healthcare inequities. This dashboard helps:
+- Public health officials prioritize intervention areas
+- Policymakers allocate healthcare resources more effectively
+- Communities prepare for climate-driven health risks
+
+
+### 📊 Application Pages
+- Home — Overview and live data preview  
+- Data Understanding — Raw vs engineered datasets  
+- County Analysis — Population and vulnerability comparisons  
+- Exploratory Visual Analysis — Hospitals, heat, and social barriers  
+- Modeling & Evaluation — Performance interpretation  
+- AI Assistant — Snowflake Cortex–powered Q&A
+<img width="402" height="470" alt="Screenshot 2025-12-12 at 4 52 28 PM" src="https://github.com/user-attachments/assets/44243dc6-6120-41ba-a4bd-5bf365416e20" />
+
+
+
+### 📊 Data Exploration
+- Explored raw and engineered datasets directly from Snowflake
+- Analyzed distributions, missing values, and county-level variation
+- Identified patterns linking vulnerability, heat risk, and hospital access
+- Used visual, interpretable EDA to support non-technical decision-makers
+
+
+### 🧠 Model Development
+- Evaluated multiple models (logistic regression, decision tree, random forest)
+- Focused on interpretability over complexity
+- Observed perfect scores due to small dataset size and clear signal
+- Explicitly discussed risks of overfitting and data leakage
+	
+
+### 📈 Results & Key Findings
+- All evaluated models achieved perfect precision and recall on the dataset
+- Results indicate a strong, easily separable pattern rather than robust generalization
+- High-risk counties consistently show overlap between social vulnerability, heat exposure, and limited healthcare capacity
+
+
+### 🤖 AI Usage
+- Integrated an AI Assistant powered by Snowflake Cortex
+- Enables natural-language questions about counties, vulnerability, and healthcare access
+- Designed for explainability and decision support, not automated decision-making
+- No external API keys required
+<img width="995" height="564" alt="Screenshot 2025-12-12 at 4 32 27 PM" src="https://github.com/user-attachments/assets/14a1c0d0-4f39-4137-9586-e57077eaed20" />
+
+
+
+### ⚖️ Responsible AI Considerations
+- County-level aggregation may hide within-county disparities
+- Small sample size limits generalizability
+- Perfect model performance flagged as a red flag, not a success metric
+- Outputs are intended to support human judgment, not replace it
+
+### 🚀 Next Steps
+- Expand datasets beyond Arizona
+- Add cross-validation and temporal analysis
+- Integrate geospatial mapping layers
+- Evaluate external validation data
+- Cross-validation with expanded datasets
+- Time-series heat analysis  
+- External validation beyond Arizona
+- Geospatial mapping layers  
+
+
+## 🙏 **Acknowledgements**
+
+Thank you Rajshri Jain, Joe Warbington, Tess Dicker and Abhijay Rane!
+
+© 2025 — Team Snowflake 1C ❄️
+Break Through Tech AI Studio
